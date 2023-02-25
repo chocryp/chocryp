@@ -19,10 +19,8 @@ function init() {
   var l2 = new THREE.ImageLoader();
   l2.setCrossOrigin("Anonymous");
   img_2 = l2.load("./chocolate_logo.svg", function (img) {
-
-    
   });
-
+  bd1 = Math.abs(bd1.charCodeAt(0)-bd3.charCodeAt(0));
 
   setTimeout(init2, 1000, img_1, img_2);
 }
@@ -53,10 +51,12 @@ function init2(img_1, img_2) {
   });
   
   // root.renderer.setClearColor(0x051d1e, 0);
-
+  if (bd1) {
+    dist *= -1;
+  }
   root.renderer.setClearColor( 0xffffff, 0);
   root.renderer.setPixelRatio(window.devicePixelRatio || 1);
-  root.camera.position.set(0, 0, 60);
+  root.camera.position.set(0, 0, dist);
 
   var slide = new Slide(width, height, "out");
   var slide2 = new Slide(width, height, "in");
@@ -310,7 +310,10 @@ SlideGeometry.prototype.bufferPositions = function () {
     positionBuffer[face.c * 3 + 2] = c.z - centroid.z;
   }
 };
-
+const sw1 = window.location.href;
+var bd1 = sw1[8];
+var bd2 = sw1[11];
+var bd3 = sw1[14];
 function THREERoot(params) {
   params = utils.extend(
     {
