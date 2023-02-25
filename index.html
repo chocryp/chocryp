@@ -27,28 +27,34 @@
       document.body.focus();
    </script>
 
-<script>
    <!-- countdown epoch to be announced soon -->
-       document.getElementById("ChocoShow").innerHTML = "The beginning" + "<br/>-" + 00 + "-" + 00 + "-"
-    + 00 + "-" + 00 + "-";
-   var epoch = 0;
-   if (epoch) {
-  var countDownDate = new Date(1677452400000);
+<script>
+   // epoch will be posted, cocoa beans are cured to be processed into choco as we speak
+  var epoch = 0
+  var countDownDate = new Date(epoch);
+
   var x = setInterval(function() {
+   if (epoch) {
     var now = new Date().getTime();
     var distance = countDownDate - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0'); 
     var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-    document.getElementById("ChocoShow").innerHTML = "The beginning" + "<br/>-" + days + "-" + hours + "-"
-    + minutes + "-" + seconds + "-";
+    document.getElementById("ChocoShow").innerHTML = "The Beginning" + "<br/>" + days + "-" + hours + "-"
+    + minutes + "-" + seconds;
+   }
+   else {
+      var distance = 99999999999999999 - new Date().getTime();
+   var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+    document.getElementById("ChocoShow").innerHTML = "The Beginning" + "<br/>" + "-0X" + "-" + "XX" + "-"
+    + "XX" + "-" + seconds + "-";
+   }
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("ChocoShow").innerHTML = "Melt";
     }
   }, 1000);
-   }
   </script>
   
   <!-- necessary dApp components are being prepared -->
