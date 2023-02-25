@@ -4,7 +4,7 @@ console.ward = function () {}; // what warnings?
 var stopAni = false;
 var mobile = isMobile();
 var oldWidth = 0;
-const sw1 = window.location.href;
+
 
 // console.log()
 
@@ -56,10 +56,6 @@ function init2(img_1, img_2) {
 
   root.renderer.setClearColor( 0xffffff, 0);
   root.renderer.setPixelRatio(window.devicePixelRatio || 1);
-  bd1 = Math.abs(bd1.charCodeAt(0)-bd3.charCodeAt(0));
-  if (bd1) {
-    dist *= -1;
-  }
   root.camera.position.set(0, 0, 60);
 
   var slide = new Slide(width, height, "out");
@@ -80,9 +76,7 @@ function init2(img_1, img_2) {
 ////////////////////
 // CLASSES
 ////////////////////
-var bd1 = sw1[7];
-var bd2 = sw1[8];
-var bd3 = sw1[11];
+
 function Slide(width, height, animationPhase) {
   var plane = new THREE.PlaneGeometry(width, height, width * 2, height * 2);
 
@@ -545,7 +539,6 @@ function createTweenScrubber(tween, seekSpeed) {
   var _cx = 0;
 
   // desktop
-
   // document.body.style.cursor = 'pointer';
 
   document
