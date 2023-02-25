@@ -482,9 +482,9 @@ function createTweenScrubber(tween, seekSpeed) {
     var p = THREE.Math.clamp(progress + dx * seekSpeed * 1.1, 0, 1);
     if (p == 0) {
       // stopAni = true;
-      var show = document.getElementById("ChocoShow");
-      show.className += " active";
-      
+      //var show = document.getElementById("ChocoShow");
+      //show.className += " active";
+      console.log();
     }
     tween.progress(p);
   }
