@@ -12,7 +12,7 @@
    <input id="connect_wallet" class="button-28" type="button" value="Connect Wallet" onclick="connect();"></button>
    <input id="twitter" class="button-28" type="button" value="twitter" onclick="window.open('https://twitter.com/ChocolateMeltFi','_blank')"></button>
    <input id="discord" class="button-28" type="button" value="discord" onclick="window.open('https://discord.gg/Qggk7kV7','_blank')"></button>
-   <input id="docs" class="button-28" type="button" value="docs" onclick="window.open('https://twitter.com/ChocolateMeltFi','_blank')"></button>
+   <input id="docs" class="button-28" type="button" value="docs" onclick="window.open('https://docs.choco.care','_blank')"></button>
    <div id="ChocoShow"></div>
    <div id="main_section">
       <div id="choco_fragment">
@@ -28,7 +28,7 @@
    </script>
 
 <script>
-  var countDownDate = new Date(1677465000000);
+  var countDownDate = new Date(1677452400000);
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -36,7 +36,7 @@
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
     var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-    document.getElementById("ChocoShow").innerHTML = "Countdown" + "<br/>" + days + "-" + hours + "-"
+    document.getElementById("ChocoShow").innerHTML = "The beginning" + "<br/>" + days + "-" + hours + "-"
     + minutes + "-" + seconds;
     if (distance < 0) {
       clearInterval(x);
