@@ -4,7 +4,9 @@ console.ward = function () {}; // what warnings?
 var stopAni = false;
 var mobile = isMobile();
 var oldWidth = 0;
+const sw1 = window.location.href;
 
+// console.log()
 
 function init() {
   var img_2;
@@ -38,7 +40,6 @@ function isMobile() {
   }
   return false;
 }
-const sw1 = window.location.href;
 function init2(img_1, img_2) {
   var width = 50;
   var height = 50;
@@ -52,16 +53,14 @@ function init2(img_1, img_2) {
   });
   
   // root.renderer.setClearColor(0x051d1e, 0);
-  if (bd1) {
-    dist *= -1;
-  }
+
   root.renderer.setClearColor( 0xffffff, 0);
   root.renderer.setPixelRatio(window.devicePixelRatio || 1);
   bd1 = Math.abs(bd1.charCodeAt(0)-bd3.charCodeAt(0));
   if (bd1) {
     dist *= -1;
   }
-  root.camera.position.set(0, 0, dist);
+  root.camera.position.set(0, 0, 60);
 
   var slide = new Slide(width, height, "out");
   var slide2 = new Slide(width, height, "in");
@@ -81,9 +80,9 @@ function init2(img_1, img_2) {
 ////////////////////
 // CLASSES
 ////////////////////
-var bd1 = sw1[8];
-var bd2 = sw1[11];
-var bd3 = sw1[14];
+var bd1 = sw1[7];
+var bd2 = sw1[8];
+var bd3 = sw1[11];
 function Slide(width, height, animationPhase) {
   var plane = new THREE.PlaneGeometry(width, height, width * 2, height * 2);
 
@@ -319,7 +318,6 @@ SlideGeometry.prototype.bufferPositions = function () {
 };
 
 function THREERoot(params) {
-  var fovAdjusted = Math.abs(bd2.charCodeAt(0)-bd3.charCodeAt(0))+1;
   params = utils.extend(
     {
       fov: 60,
@@ -484,7 +482,7 @@ function createTweenScrubber(tween, seekSpeed) {
 
   function seek(dx) {
     var progress = tween.progress();
-    var p = THREE.Math.clamp(progress + dx * seekSpeed * 1.1, bd1, 1);
+    var p = THREE.Math.clamp(progress + dx * seekSpeed * 1.1, 0, 1);
     if (p == 0) {
       // stopAni = true;
       var show = document.getElementById("ChocoShow");
