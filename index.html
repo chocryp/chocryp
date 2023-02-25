@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Choco</title>
+      <link rel="icon" type="image/x-icon" href="./chocolate_logo.svg">
+      <link rel="stylesheet" href="./style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+   </head>
+
+   <input id="connect_wallet" class="button-28" type="button" value="Connect Wallet" onclick="connect();"></button>
+   <input id="twitter" class="button-28" type="button" value="twitter" onclick="window.open('http://twitter.com/choco','_blank')"></button>
+   <input id="discord" class="button-28" type="button" value="discord" onclick="window.open('https://discord.gg/8fmSH4Kfbj','_blank')"></button>
+   <input id="docs" class="button-28" type="button" value="docs" onclick="window.open('http://twitter.com/choco','_blank')"></button>
+   <div id="ChocoShow"></div>
+   <div id="main_section">
+      <div id="choco_fragment">
+      </div>
+   </div>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script> 
+   <script type="text/javascript" src="./mainCanvas.js"></script> 
+   <script>
+      document.body.tabIndex = '0';
+      document.body.focus();
+   </script>
+
+<script>
+  var countDownDate = new Date(1677465000000);
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+    document.getElementById("ChocoShow").innerHTML = days + "-" + hours + "-"
+    + minutes + "-" + seconds;
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("ChocoShow").innerHTML = "Melt";
+    }
+  }, 1000);
+  </script>
+  
+  <!-- necessary dApp components are being prepared -->
+   <script>
+      async function connect() {
+       if (window.ethereum) {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        window.web3 = new Web3(window.ethereum);
+       } 
+      }
+   </script>
+   <script>      
+      async function isConnected() {
+        const accounts = await ethereum.request({method: 'eth_accounts'});       
+        if (accounts.length) {
+          document.getElementById("connect_wallet").value = "Connected";
+        }
+      }
+   </script>
+   <script>ethereum.on('accountsChanged', (accounts) => {
+      if(!accounts.length) {
+      document.getElementById("connect_wallet").value = "Connect Wallet";
+      } else {
+        document.getElementById("connect_wallet").value = "Connected";
+      }
+      });
+   </script>
+   <script>
+      window.onload = (event) => {
+         init();
+         isConnected();
+      };
+   </script>
+     <!-- necessary dApp components are being prepared -->
+   </body>
+</html>
