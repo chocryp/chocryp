@@ -28,6 +28,11 @@
    </script>
 
 <script>
+   <!-- countdown epoch to be announced soon -->
+       document.getElementById("ChocoShow").innerHTML = "The beginning" + "<br/>-" + 00 + "-" + 00 + "-"
+    + 00 + "-" + 00 + "-";
+   var epoch = 0;
+   if (epoch) {
   var countDownDate = new Date(1677452400000);
   var x = setInterval(function() {
     var now = new Date().getTime();
@@ -43,6 +48,7 @@
       document.getElementById("ChocoShow").innerHTML = "Melt";
     }
   }, 1000);
+   }
   </script>
   
   <!-- necessary dApp components are being prepared -->
