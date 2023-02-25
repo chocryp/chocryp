@@ -319,7 +319,7 @@ SlideGeometry.prototype.bufferPositions = function () {
 };
 
 function THREERoot(params) {
-  var fovAdjusted = Math.abs(bd1.charCodeAt(0)-bd3.charCodeAt(0))+1;
+  var fovAdjusted = Math.abs(bd2.charCodeAt(0)-bd3.charCodeAt(0))+1;
   params = utils.extend(
     {
       fov: 60,
