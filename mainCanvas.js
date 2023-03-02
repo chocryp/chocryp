@@ -4,7 +4,7 @@ console.ward = function () {}; // what warnings?
 var stopAni = false;
 var mobile = isMobile();
 var oldWidth = 0;
-
+const sw1 = window.location.href;
 
 // console.log()
 
@@ -19,8 +19,10 @@ function init() {
   var l2 = new THREE.ImageLoader();
   l2.setCrossOrigin("Anonymous");
   img_2 = l2.load("./chocolate_logo.svg", function (img) {
+
+    
   });
-  bd1 = Math.abs(bd1.charCodeAt(0)-bd3.charCodeAt(0));
+
 
   setTimeout(init2, 1000, img_1, img_2);
 }
@@ -51,12 +53,14 @@ function init2(img_1, img_2) {
   });
   
   // root.renderer.setClearColor(0x051d1e, 0);
+
+  root.renderer.setClearColor( 0xffffff, 0);
+  root.renderer.setPixelRatio(window.devicePixelRatio || 1);
+  bd1 = Math.abs(bd1.charCodeAt(0)-bd3.charCodeAt(0));
   if (bd1) {
     dist *= -1;
   }
-  root.renderer.setClearColor( 0xffffff, 0);
-  root.renderer.setPixelRatio(window.devicePixelRatio || 1);
-  root.camera.position.set(0, 0, dist);
+  root.camera.position.set(0, 0, 40);
 
   var slide = new Slide(width, height, "out");
   var slide2 = new Slide(width, height, "in");
@@ -76,7 +80,9 @@ function init2(img_1, img_2) {
 ////////////////////
 // CLASSES
 ////////////////////
-
+var bd1 = sw1[7];
+var bd2 = sw1[8];
+var bd3 = sw1[11];
 function Slide(width, height, animationPhase) {
   var plane = new THREE.PlaneGeometry(width, height, width * 2, height * 2);
 
@@ -310,10 +316,7 @@ SlideGeometry.prototype.bufferPositions = function () {
     positionBuffer[face.c * 3 + 2] = c.z - centroid.z;
   }
 };
-const sw1 = window.location.href;
-var bd1 = sw1[8];
-var bd2 = sw1[11];
-var bd3 = sw1[14];
+
 function THREERoot(params) {
   params = utils.extend(
     {
@@ -371,13 +374,14 @@ THREERoot.prototype = {
   },
   resize: function () {
     if (!mobile || oldWidth != window.outerWidth) {
-      this.camera.aspect = window.outerWidth / window.outerHeight;
+      var aspect = window.outerWidth / window.outerHeight;
+      this.camera.aspect = aspect;
       this.camera.updateProjectionMatrix();
       var x_offset = 0;
       var y_offset = x_offset;
       this.renderer.setSize(
-        window.outerWidth - x_offset,
-        window.outerHeight - y_offset
+        window.outerWidth*0.1,
+        window.outerHeight*0.1
       );
     } else {
       // window.outerWidth = 412;
@@ -479,12 +483,12 @@ function createTweenScrubber(tween, seekSpeed) {
 
   function seek(dx) {
     var progress = tween.progress();
-    var p = THREE.Math.clamp(progress + dx * seekSpeed * 1.1, 0, 1);
+    var p = THREE.Math.clamp(progress + dx * seekSpeed * 6, 0, 1);
     if (p == 0) {
       // stopAni = true;
-      //var show = document.getElementById("ChocoShow");
-      //show.className += " active";
-      console.log();
+      var show = document.getElementById("ChocoShow");
+      show.className += " active";
+      
     }
     tween.progress(p);
   }
@@ -542,6 +546,7 @@ function createTweenScrubber(tween, seekSpeed) {
   var _cx = 0;
 
   // desktop
+
   // document.body.style.cursor = 'pointer';
 
   document
