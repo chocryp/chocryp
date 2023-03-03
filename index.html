@@ -6,6 +6,7 @@
       <title>Choco</title>
       <link rel="icon" type="image/x-icon" href="./chocolate_logo.svg">
       <link rel="stylesheet" href="./style.css">
+      <link rel="stylesheet" href="./mobile.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
       <style>
          @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
@@ -17,8 +18,10 @@
    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
  </style>
    </head>
+
+
   <body>
-   
+  
    <input id="connect_wallet" class="button-28" type="button" value="Connect Wallet" onclick="connect();">
   
    </button>
@@ -44,9 +47,9 @@
          <!-- </div> -->
          
          <div id="img1" class="flex">
-           <p id="text1"> Global warming is accelerating at an unprecedented pace and all the chocolate reserves in the world are in imminent danger of melting. You must store your chocolate in a cooler place as fast as possible or you risk losing it all, at an alarming rate of 0.005% per minute... The only way to protect your chocolate is to put it in one of our chocolate Protection Vaults.<br><br>
+            <p id="text1"> Global warming is accelerating at an unprecedented pace and all the chocolate reserves in the world are in imminent danger of melting. You must store your chocolate in a cooler place as fast as possible or you risk losing it all, at an alarming rate of 0.005% per minute... The only way to protect your chocolate is to put it in one of our chocolate Protection Vaults.<br><br>
 
-            There are two types of vaults that protect your $CHOCO partially in the form of rewards. The rewards are 210,000 $CHOCO per Arbitrum block (~10mil per ETH block). The Fridge vault earns you 9/10 of the rewards by staking $CHOCO/ETH LP on CamelotDEX. The Freezer vault earns you only 1/10 of the rewards but protects you from Impermanent Loss. Both vaults only have a locking period of 24 hours. So, if you want to secure your $CHOCO against the unpredictable heat waves, it's time to take action. </p>
+               There are two types of vaults that protect your $CHOCO partially in the form of rewards. The rewards are 213,432 $CHOCO per Arbitrum block (~10mil per ETH block). The Fridge vault earns you 9/10 of the rewards by staking $CHOCO/ETH LP on CamelotDEX. The Freezer vault earns you only 1/10 of the rewards but protects you from Impermanent Loss. Both vaults only have a locking period of 24 hours. So, if you want to secure your $CHOCO against the unpredictable heat waves, it's time to take action. </p>
          </div>
          
 
@@ -68,6 +71,9 @@
       
    </div>
    <div id="main_section">
+      <p id="mobileview">
+         $CHOCO<br><br>Please view site as Desktop
+      </p>
       <div id="choco_fragment"></div>
    </div>   
 <div id="form2">
@@ -76,7 +82,7 @@
       <!-- Add-on -->
       <div class="input-addon__addon input-addon__addon--prepended"><input id="max" class="button-28" type="button" value="max" onclick="placemax();">      
       </button></div>
-      <input id="amount" type="txt" class="input-addon__input" placeholder="Soon" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+      <input id="amount" type="txt" class="input-addon__input" placeholder="0.0000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
       
       <input id="contribute" class="button-28" type="button" value="contribute" onclick="contribute();"></button>
    </div>
@@ -89,7 +95,7 @@
    
    <div id="stats">
       <div id="pre">
-       <div id="totalraised"><span id="totalE"></span><b>⬆Σ♦&nbsp;&nbsp;&nbsp;</b></div>
+         <div id="totalraised"><span id="totalE"></span><b>⬆Σ♦&nbsp;&nbsp;&nbsp;</b></div>
          <div id="chocpereth"><span id="choceth"></span>🍫/Eth</div>
          
       </div>
@@ -100,8 +106,8 @@
    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script> 
-   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' 
-           data-cf-beacon='{"token": "b639d3bcad3c4ec397fce4e2e2d6aebf"}'></script> 
+   <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' 
+           data-cf-beacon='{"token": "b639d3bcad3c4ec397fce4e2e2d6aebf"}'></script> -->
    <script type="text/javascript" src="./mainCanvas.js"></script> 
    <script type="text/javascript" src="./mainScript.js"></script> 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.0.8/ethers.js" integrity="sha512-6n4OHOXc5lLrX5bRgWsvvkNib1eUqWwynvG1xq7FubofIW0cKfipw/Z/YAnndRAWw1OQqReLHE6CmaPkLujTIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -109,47 +115,40 @@
       document.body.tabIndex = '0';
       document.body.focus();
    </script>
-<script>
-   // epoch will be posted, cocoa beans are cured to be processed into choco as we speak
-  var epoch = 1677884400000
-  var countDownDate = new Date(epoch);
-
-  var x = setInterval(function() {
-   if (epoch) {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0'); 
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-    document.getElementById("ChocoShow").innerHTML = "The Beginning" + "<br/>-" + days + "-" + hours + "-"
-    + minutes + "-" + seconds+"-";
-   }
-   else {
-      var distance = 99999999999999999 - new Date().getTime();
-   var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-    document.getElementById("ChocoShow").innerHTML = "The Beginning" + "<br/>" + "-0X" + "-" + "XX" + "-"
-    + "XX" + "-" + seconds + "-";
-   }
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("ChocoShow").innerHTML = "Melt";
-    }
-  }, 1000);
-  </script>
-<script>
+   <script>
+      // epoch will be posted, cocoa beans are cured to be processed into choco as we speak
+     var epoch = 1677884400000
+     var countDownDate = new Date(epoch);
+   
+     var x = setInterval(function() {
+      if (epoch) {
+       var now = new Date().getTime();
+       var distance = countDownDate - now;
+       var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0'); 
+       var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+       document.getElementById("ChocoShow").innerHTML = "The Beginning" + "<br/>-" + days + "-" + hours + "-"
+       + minutes + "-" + seconds + "-";
+      }
+       if (distance < 0) {
+         clearInterval(x);
+         document.getElementById("ChocoShow").innerHTML = "PreSale Live!";
+       }
+     }, 1000);
+     </script>
+   <script type="text/javascript" src="https://unpkg.com/@metamask/detect-provider@2.0.0/dist/index.js"></script> 
+    <script>
       if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
-</script> 
+</script>
    <script>      
       window.onload = (event) => {
          init();
          isConnected();
          registerEventsListeners();
-         //updateInterval();
       };
    </script>
-
    </body>
 </html>
