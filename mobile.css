@@ -18,13 +18,15 @@
         display:inline-block;
         text-align: center;
     }
+
     
     #main_section {
-        position: fixed !important;
+        all: unset;
+        position: unset;
         z-index: 3 !important;
         top: 0;
-        width: 102vw;
-        left: 0;
+        width: 100vw;
+        left: 1rem;
     }
     #choco_fragment, #canvas {
         position: fixed !important;
@@ -33,3 +35,42 @@
   }
 
    
+  @media (min-aspect-ratio: 5/4) {
+    .container {
+        flex-direction: row !important;
+    
+    }
+    #melt {
+        width: 50%;
+    }
+
+    #img2 {
+    
+        margin-right: 10px;
+        width: 50%;
+        /* padding: 30px; */
+        /* background-color: brown; */
+        /* flex: 1 1 0px; */
+        /* margin-right: 20px; */
+        /* padding: 30px; */
+      }
+   
+      #text1{
+
+        letter-spacing: 0.1em;
+    
+    
+        
+        /* font-size: 14px; */
+        font-size: 0.4rem;
+        margin-bottom: 30px;
+        color: #f2f2f2;
+        width: fit-content;
+        block-size: fit-content;
+        font-family: 'Dosis', sans-serif;
+        font-family: 'Kanit', sans-serif;
+        /* font-family: 'Anton', sans-serifs; */
+    
+
+}
+  }
