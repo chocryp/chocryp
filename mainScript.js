@@ -239,11 +239,11 @@ function updatePresaleStats() {
     choceth.innerHTML = res.toLocaleString();
   }).catch((error) => {});
 
-  // chocoPresale.methods.pending().call().then((res) => {
-  //   console.res("pending chock", res)
-  //   res = web3.utils.fromWei(res, "ether");
-  //   res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0) 
-  //   pendingchoc.innerHTML = res;
-  // }).catch((error) => {});
+    chocoPresale.methods.pending().call().then((res) => {
+    console.res("pending chock", res)
+    res = web3.utils.fromWei(res, "ether");
+    res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0) 
+    pendingchoc.innerHTML = res;
+  }).catch((error) => {});
 }
 
