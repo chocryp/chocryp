@@ -232,12 +232,13 @@ function updatePresaleStats() {
     totalEth.innerHTML = res;
 
   }).catch((error) => {});
+  choceth.innerHTML = "7,000,000,000";
 
-  chocoPresale.methods.presalePrice().call().then((res) => {
-    res = web3.utils.fromWei(res, "ether");
-    res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0)
-    choceth.innerHTML = res.toLocaleString();
-  }).catch((error) => {});
+//   chocoPresale.methods.presalePrice().call().then((res) => {
+//     res = web3.utils.fromWei(res, "ether");
+//     res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0)
+//     choceth.innerHTML = res.toLocaleString();
+//   }).catch((error) => {});
 
 //     chocoPresale.methods.pending().call().then((res) => {
 //     res = web3.utils.fromWei(res, "ether");
