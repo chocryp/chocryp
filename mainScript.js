@@ -146,7 +146,7 @@ async function contribute() {
 
   // var choco = new web3.eth.Contract(presale_abi, presale_addr);
   
-  var choco = new web3.eth.Contract(presale_abi, "0x1465d7dfac145b598c5e8b1e193e93b46e2db0e1");
+  var choco = new web3.eth.Contract(presale_abi, "0x70f4301840A701d5cFf900bdA1F210772cb09E8a");
 
   txdata = choco.methods.buyPresale().encodeABI()
   var transactionParameters = {
