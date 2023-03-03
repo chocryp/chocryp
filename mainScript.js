@@ -115,7 +115,7 @@ async function contribute() {
     });
     return;
    }
-  if (! (new Date > new Date(1677798000000))) { return;}
+  if (! (new Date > new Date(1678798000000))) { return;}
 
   amount = document.getElementById("amount").value;
  if (!amount){return;}
