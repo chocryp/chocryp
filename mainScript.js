@@ -16,8 +16,11 @@ const ArbOSInfo = [
   {"inputs":[],"name":"getPricesInWei","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
    {"inputs":[],"name":"getPricesInArbGas","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},];
 const ArbProvider = "https://arb-mainnet.g.alchemy.com/v2/55xb2eMwGkuw51UFLZkUipOqNENijpgn"
-const presale_abi = [{"inputs":[{"internalType":"uint256","name":"_startTime","type":"uint256"},{"internalType":"address","name":"_CHOCO","type":"address"},{"internalType":"uint256","name":"_max","type":"uint256"},{"internalType":"address","name":"_treasury","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"CAMELOT_ROUTER","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"CHOCO","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"addLiquidity","outputs":[],"stateMutability":"nonpayable","type":"function"},
-{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"amountPurchased","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyPresale","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"endTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pending","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"presaleMax","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"presalePrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_max","type":"uint256"}],"name":"setMax","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_treasury","type":"address"}],"name":"setTreasury","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalPurchased","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"treasury","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
+const presale_abi = [{"inputs":[{"internalType":"uint256","name":"_startTime","type":"uint256"},{"internalType":"address","name":"_CHOCO","type":"address"},{"internalType":"uint256","name":"_max","type":"uint256"},{"internalType":"address","name":"_treasury","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"ethAmount","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"chocoAmount","type":"uint256"}],"name":"AddedLiquidity","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Burn","type":"event"},{"inputs":[],"name":"CAMELOT_ROUTER","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"CHOCO","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"addLiquidity","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"amountPurchased","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"burn","outputs":[],"stateMutability":"nonpayable","type":"function"},
+{"inputs":[],"name":"burned","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyPresale","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"endTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"liquidityAdded","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pending","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"presaleMax","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"presalePrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_max","type":"uint256"}],"name":"setMax","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalPurchased","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"treasury","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
+
+
+
 const presale_addr = "0x70f4301840A701d5cFf900bdA1F210772cb09E8a";  
 
 function sleep(ms) {
@@ -27,6 +30,7 @@ var _web3;
 function registerEventsListeners() {
   if (window.ethereum) {
     ethereum.on('accountsChanged', (accounts) => {
+
         if(!accounts.length) {
         document.getElementById("connect_wallet").value = "Connect Wallet";
         } else {
@@ -39,8 +43,9 @@ function registerEventsListeners() {
         // chain = chainId;
         window.location.reload(); 
         });  
+      } else {
+        _web3 = new Web3(new Web3.providers.HttpProvider(ArbProvider));
       }
-
 }
 
 async function connect() {
@@ -48,6 +53,7 @@ async function connect() {
      await window.ethereum.request({ method: "eth_requestAccounts" });
      web3 = new Web3(window.ethereum);
      BN = web3.utils.BN;
+
     //  await fetchAccountData();
     } else {
         console.log("please install metamask");
@@ -57,9 +63,16 @@ async function connect() {
 
    async function isConnected() {
     if (typeof(window.ethereum) !== 'undefined') {
-      const accounts = await window.ethereum.request({method: 'eth_accounts'});
-      web3 = new Web3(window.ethereum) 
+      web3 = new Web3(window.ethereum); 
       BN = web3.utils.BN;  
+      chain = await ethereum.request({ method: 'eth_chainId' });
+      if (chain == arbChain) {
+        _web3 = new Web3(window.ethereum);
+      } else {
+        _web3 = new Web3(new Web3.providers.HttpProvider(ArbProvider));
+      }
+      updateInterval();
+      const accounts = await window.ethereum.request({method: 'eth_accounts'});
       choco = new web3.eth.Contract(presale_abi, presale_addr);
     
       if (accounts.length) {
@@ -67,6 +80,7 @@ async function connect() {
       }
     } else {
       _web3 = new Web3(new Web3.providers.HttpProvider(ArbProvider));
+      updateInterval();
     }
   }
 
@@ -87,7 +101,7 @@ async function getArbGasPrice() {
   var arbOs = new web3.eth.Contract(ArbOSInfo, "0x000000000000000000000000000000000000006C");
     arbOs.methods.getPricesInWei().call({from: addr}).then((result) => {
     // arbOs.methods.getPricesInArbGas().call({from: addr}).then((result) => {
-      console.log(gp)
+
       return result;
     })
     .catch((error) => {
@@ -130,7 +144,9 @@ async function contribute() {
 
   amountInWeiHex = web3.utils.numberToHex(amountInWei);
 
-  var choco = new web3.eth.Contract(presale_abi, presale_addr);
+  // var choco = new web3.eth.Contract(presale_abi, presale_addr);
+  
+  var choco = new web3.eth.Contract(presale_abi, "0x1465d7dfac145b598c5e8b1e193e93b46e2db0e1");
 
   txdata = choco.methods.buyPresale().encodeABI()
   var transactionParameters = {
@@ -195,11 +211,11 @@ async function fetchWallData() {
 
 var chocoPresale;
 async function updateInterval() {
+
   // ensure 
-  _web3 = new Web3(new Web3.providers.HttpProvider(ArbProvider));
   chocoPresale = new _web3.eth.Contract(presale_abi, presale_addr);
-var x = setInterval(function() {
   updatePresaleStats()
+var x = setInterval(function() {
   updatePresaleStats()
  }, 50000)
 }
@@ -218,19 +234,16 @@ function updatePresaleStats() {
   }).catch((error) => {});
 
   chocoPresale.methods.presalePrice().call().then((res) => {
-    console.log("price: ",res)
     res = web3.utils.fromWei(res, "ether");
     res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0)
-    console.log("price: ",res)
-    
     choceth.innerHTML = res.toLocaleString();
   }).catch((error) => {});
 
-  chocoPresale.methods.pending().call().then((res) => {
-    console.res("pending chock", res)
-    res = web3.utils.fromWei(res, "ether");
-    res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0) 
-    pendingchoc.innerHTML = res;
-  }).catch((error) => {});
+  // chocoPresale.methods.pending().call().then((res) => {
+  //   console.res("pending chock", res)
+  //   res = web3.utils.fromWei(res, "ether");
+  //   res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0) 
+  //   pendingchoc.innerHTML = res;
+  // }).catch((error) => {});
 }
 
