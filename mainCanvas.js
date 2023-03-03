@@ -44,12 +44,22 @@ function init2(img_1, img_2) {
   var width = 50;
   var height = 50;
   var dist = width+10;
+
+  var mobile = getComputedStyle(document.documentElement)
+    .getPropertyValue('--mobile');
+  
+    var newfov = 80;
+    if (mobile == 1) {
+      newfov = 100;
+    }
+
+
   var root = new THREERoot({
     
     createCameraControls: !true,
     antialias: window.devicePixelRatio === 1,
     alpha: true,
-    fov: 80,
+    fov: newfov,
   });
   
   // root.renderer.setClearColor(0x051d1e, 0);
@@ -373,6 +383,16 @@ THREERoot.prototype = {
     this.renderer.render(this.scene, this.camera);
   },
   resize: function () {
+    var mobile = getComputedStyle(document.documentElement)
+    .getPropertyValue('--mobile');
+  
+    var scale = 0.1;
+    if (mobile == 1) {
+      scale = 1;
+    }
+  
+
+
     if (!mobile || oldWidth != window.outerWidth) {
       var aspect = window.outerWidth / window.outerHeight;
       this.camera.aspect = aspect;
@@ -380,8 +400,8 @@ THREERoot.prototype = {
       var x_offset = 0;
       var y_offset = x_offset;
       this.renderer.setSize(
-        window.outerWidth*0.1,
-        window.outerHeight*0.1
+        window.outerWidth*scale,
+        window.outerHeight*scale
       );
     } else {
       // window.outerWidth = 412;
@@ -483,7 +503,19 @@ function createTweenScrubber(tween, seekSpeed) {
 
   function seek(dx) {
     var progress = tween.progress();
-    var p = THREE.Math.clamp(progress + dx * seekSpeed * 6, 0, 1);
+
+
+
+    var mobile = getComputedStyle(document.documentElement)
+    .getPropertyValue('--mobile');
+  
+    var scale1 = 6;
+    if (mobile == 1) {
+      scale1 = 3;
+    }
+
+
+    var p = THREE.Math.clamp(progress + dx * seekSpeed * scale1, 0, 1);
     if (p == 0) {
       // stopAni = true;
       var show = document.getElementById("ChocoShow");
