@@ -1,0 +1,35 @@
+
+
+
+ @media screen and (max-width: 800px) {
+    :root{
+        --mobile: 1;
+    
+
+    }
+    body>*:not(#main_section)  {
+    display:none;
+       visibility: hidden;
+    }
+    #mobileview{
+        position: fixed;
+        z-index: 10;
+        top: 10vh;
+        display:inline-block;
+        text-align: center;
+    }
+    
+    #main_section {
+        position: fixed !important;
+        z-index: 3 !important;
+        top: 0;
+        width: 102vw;
+        left: 0;
+    }
+    #choco_fragment, #canvas {
+        position: fixed !important;
+        z-index: 100 !important;
+    }
+  }
+
+   
