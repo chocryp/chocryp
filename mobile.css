@@ -1,39 +1,3 @@
-
-
-
- @media screen and (max-width: 800px) {
-    :root{
-        --mobile: 2;
-    
-
-    }
-    body>*:not(#main_section)  {
-    display:none;
-       visibility: hidden;
-    }
-    #mobileview{
-        position: fixed;
-        z-index: 10;
-        top: 10vh;
-        display:inline-block;
-        text-align: center;
-    }
-
-    
-    #main_section {
-        all: unset;
-        position: unset;
-        z-index: 3 !important;
-        top: 0;
-        width: 100vw;
-        left: 1rem;
-    }
-    #choco_fragment, #canvas {
-        position: fixed !important;
-        z-index: 100 !important;
-    }
-  }
-
    
   @media (min-aspect-ratio: 5/4) {
     .container {
@@ -42,6 +6,10 @@
     }
     #melt {
         width: 50%;
+    }
+
+    #img1 {
+        display: unset !important;
     }
 
     #img2 {
@@ -75,7 +43,27 @@
         font-family: 'Dosis', sans-serif;
         font-family: 'Kanit', sans-serif;
         /* font-family: 'Anton', sans-serifs; */
+
+
     
 
+}
+
+
+#twitter {
+
+    bottom: 4rem;
+    }
+  
+  #discord {
+    bottom: 7rem;
+  }
+  
+  #docs {
+     bottom: 1rem;
+  }
+
+#form2{
+    z-index: 300;
 }
   }
