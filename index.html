@@ -123,7 +123,7 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0'); 
     var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
     document.getElementById("ChocoShow").innerHTML = "The Beginning" + "<br/>-" + days + "-" + hours + "-"
-    + minutes + "-" + seconds+"-;
+    + minutes + "-" + seconds+"-";
    }
    else {
       var distance = 99999999999999999 - new Date().getTime();
