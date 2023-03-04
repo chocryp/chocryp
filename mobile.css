@@ -68,6 +68,10 @@
 
     bottom: 7rem;
   }
+  
+#max {
+  min-width: 120px;
+}
 
 #form2{
     z-index: 300;
