@@ -72,6 +72,13 @@
 #max {
   min-width: 120px;
 }
+#pre {
+  flex-direction: row;
+}
+#stats {
+  right: 25%;
+  top: 1rem;
+}
 
 #form2{
     z-index: 300;
