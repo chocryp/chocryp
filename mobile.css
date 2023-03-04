@@ -50,17 +50,24 @@
 }
 
 
+
+
 #twitter {
 
-    bottom: 4rem;
+    bottom: 3rem;
     }
   
   #discord {
-    bottom: 7rem;
+    bottom: 5rem;
   }
   
   #docs {
      bottom: 1rem;
+  }
+  
+#charts {
+
+    bottom: 7rem;
   }
 
 #form2{
