@@ -112,7 +112,7 @@ body {
 
 #pre {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: #222222;
   /* color: var(--light-brown); */
   transition: all 2000ms cubic-bezier(.23, 1, 0.32, 1);
@@ -250,8 +250,8 @@ body {
 #stats {
 
   position: fixed;
-  right: 25%;
-  top: 1rem ;
+  right: 15%;
+  top: 35%;
 }
 
 #totalraised, #chocpereth, #pending {
