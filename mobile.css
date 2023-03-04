@@ -63,7 +63,9 @@
   #docs {
      bottom: 1rem;
   }
-  
+#ChocoShow {
+  bottom: 1.1rem;
+}
 #charts {
 
     bottom: 7rem;
