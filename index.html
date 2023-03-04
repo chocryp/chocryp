@@ -6,7 +6,7 @@
       <title>Choco</title>
       <link rel="icon" type="image/x-icon" href="./chocolate_logo.svg">
       <link rel="stylesheet" href="./style.css">
-      <link rel="stylesheet" href="./mobile.css">
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
       <style>
          @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
@@ -18,89 +18,214 @@
    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
  </style>
    </head>
-
-
-  <body>
-  
-   <input id="connect_wallet" class="button-28" type="button" value="Connect Wallet" onclick="connect();">
-  
-   </button>
-   <!-- <input id="chain_button" class="button-28" type="button" value="" onclick="changeChain();"></button> -->
-   <button id="twitter" class="button-28" type="button" value="twitter" onclick="window.open('https://twitter.com/ChocolateMeltFi','_blank')">twitter</button>
-   <button id="discord" class="button-28" type="button" value="discord" onclick="window.open('https://discord.gg/QRgtGSm5vG','_blank')">discord</button>
-   <button id="docs" class="button-28" type="button" value="docs" onclick="sleep(0.3), window.open('https://docs.choco.care','_blank')">docs</button>
-   <button id="charts" class="button-28" type="button" value="charts" onclick="sleep(0.3), window.open('https://docs.choco.care','_blank')">charts</button>
+<header>
    
-   <hr id="mid" class="rounded">
-   <!-- <div id="mid"></div> -->
-
-
- 
-   <span id="Bannertext">
-      <div id="banner" class="prevent-select">Choco</div> 
+   <span id="bannercontainer">
+      <span id="banner" class="prevent-select">Choco</span> 
    </span>
-
-   <div id="dual" class="container">
-      <!-- <div id="container2" class="container"> -->
-         <!-- <div id="img2" class="flex"> -->
-            <img id="melt" class="flex" src="Chocologo-modified.png" alt="melt in japan">
-         <!-- </div> -->
-         
-         <div id="img1" class="flex">
-            <p id="text1"> Global warming is accelerating at an unprecedented pace and all the chocolate reserves in the world are in imminent danger of melting. You must store your chocolate in a cooler place as fast as possible or you risk losing it all, at an alarming rate of 0.005% per minute... The only way to protect your chocolate is to put it in one of our chocolate Protection Vaults.<br><br>
-
-               There are two types of vaults that protect your $CHOCO partially in the form of rewards. The rewards are 210,000 $CHOCO per Arbitrum block (~10mil per ETH block). The Fridge vault earns you 9/10 of the rewards by staking $CHOCO/ETH LP on CamelotDEX. The Freezer vault earns you only 1/10 of the rewards but protects you from Impermanent Loss. Both vaults only have a locking period of 24 hours. So, if you want to secure your $CHOCO against the unpredictable heat waves, it's time to take action. <br><br><br><span id="salecap">Soft Cap: <b>50 ETH</b><br> <br>Max Cap: <b>200 ETH</b><br><br>Wallet limit: <b>6 ETH</b></span></p>
-         </div>
-         
-
-
-
-      <!-- <div id="container2" class="flex-container">
-
-         <div class="flex-child magenta">
-           Flex Column 1sdf
-         </div>
-         
-         <div class="flex-child green">
-           Flex Column 2
-         </div>
-       </div> -->
-   </div>
-
-   <div id="ChocoShow">
-      
-   </div>
-   <div id="main_section">
-      <p id="mobileview">
-         $CHOCO<br><br>Please view site as Desktop
-      </p>
-      <div id="choco_fragment"></div>
-   </div>   
-<div id="form2">
-   <!-- Add-on prepended -->
-   <div class="input-addon">
-      <!-- Add-on -->
-      <div class="input-addon__addon input-addon__addon--prepended"><input id="max" class="button-28" type="button" value="max" onclick="placemax();">      
-      </button></div>
-      <input id="amount" type="txt" class="input-addon__input" placeholder="0.0000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-      
-      <input id="contribute" class="button-28" type="button" value="contribute" onclick="contribute();"></button>
-   </div>
-   <p id="maxAmountMsg" class="hidden">Max Amount is 6</p>
-   <div class="input-addon"></div>
-   </div>
-
-   <div id="pending"><span id="pendingchoc"></span>⌛🧧🍫</div>
-   <div id="ethRaised"></div>
+  
    
-   <div id="stats">
-      <div id="pre">
-         <div id="totalraised"><span id="totalE"></span><b>⬆Σ♦&nbsp;&nbsp;&nbsp;</b></div>
-         <div id="chocpereth"><span id="choceth"></span>🍫/Eth</div>
+   <input id="connect_wallet" class="button-28" type="button" value="Connect Wallet" onclick="connect();">
+   </button>
+
+</header>
+<div id="headerLine"></div>
+
+<button id="twitter" class="button-28" type="button" value="twitter" onclick="window.open('https://twitter.com/ChocolateMeltFi','_blank')">twitter</button>
+<button id="discord" class="button-28" type="button" value="discord" onclick="window.open('https://discord.gg/QRgtGSm5vG','_blank')">discord</button>
+<button id="docs" class="button-28" type="button" value="docs" onclick="sleep(0.3), window.open('https://docs.choco.care','_blank')">docs</button>
+<button id="charts" class="button-28" type="button" value="charts" onclick="sleep(0.3), window.open('https://docs.choco.care','_blank')">charts</button>
+
+<body>
+   
+   
+   
+      
+      <div id="imgTxtFlxContainer" class="medium_gap">
+         <img id="melt" class="rounded" src="Chocologo-modified.png" alt="melt in japan">
          
-      </div>
+         <div id="globalWarming" class="rounded">
+            <p id="text1"> Global warming is accelerating at an unprecedented pace and all the chocolate reserves in the world are in imminent danger of melting. You must store your chocolate in a cooler place as fast as possible or you risk losing it all, at an alarming rate of 0.005% per minute... The only way to protect your chocolate is to put it in one of our chocolate Protection Vaults.<br><br>
+               
+               There are two types of vaults that protect your $CHOCO partially in the form of rewards. The rewards are 200,000 $CHOCO per Arbitrum block (~10mil per ETH block). The Fridge vault earns you 9/10 of the rewards by staking $CHOCO/ETH LP on CamelotDEX. The Freezer vault earns you only 1/10 of the rewards but protects you from Impermanent Loss. Both vaults only have a locking period of 24 hours. So, if you want to secure your $CHOCO against the unpredictable heat waves, it's time to take action.</p>
+            </div>
+         </div>
+         
+     
+
+         
+         
+      
+         
+         
+
+
+<p style="text-align: center;">Claim Choco</p>
+
+<div id="claimContainer" class="section container small_gap rounded_small">
+
+   <div class="container container_child">
+         <div class="colflex container_child container small_gap">
+            <div class="statsContainer container_child rounded_small">
+               <p class="statLabel">Total ETH raised</p>
+               <p class="statValue">200.00</p>
+            </div>
+
+            <div class="statsContainer container_child rounded_small">
+               <p id="label1" class="statLabel">Pending Choco</p>
+               <p id="pending_choco" class="statValue"></p>
+            </div> 
+         </div>
+         
+
+
+         <div class="colflex container_child container small_gap">
+
+            <div class="statsContainer container_child rounded_small">
+               <p class="statLabel">Choco/ETH</p>
+               <p class="statValue">7,000,000,000</p>
+            </div>
+
+            <div class="statsContainer container_child rounded_small">
+               <p id="label1" class="statLabel">Status</p>
+               <p id="label2" class="statValue">Ended</p>
+            </div> 
+
+         </div>
    </div>
 
+   <div class="action-container">
+
+         <div>
+               <button class="button-29" onclick="presale_claim();">Claim</button>
+         </div>
+   </div> 
+
+</div>
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+<p style="text-align: center;">Chocolatier Fridge</p>
+
+
+<div id="freezer_container" class="section container small_gap rounded_small ">
+
+   <div class="container container_child">
+         <div class="colflex container_child container small_gap">
+            <div class="statsContainer container_child rounded_small rounded_small">
+               <p class="statLabel">Frozen Chocos</p>
+               <p id="Fronen Chocos" class="statValue">&nbsp;</p>
+            </div>
+
+            <div class="statsContainer container_child rounded_small">
+               <p id="chocolatier_lp_balance" class="statLabel">TVL</p>
+               <p id="freezer_tvl" class="statValue">&nbsp;</p>
+            </div> 
+         </div>
+         
+         
+
+         <div class="colflex container_child container small_gap">
+
+            <div class="statsContainer container_child rounded_small">
+               <p class="statLabel">Freezer APR</p>
+               <p id="freezer_apr" class="statValue">&nbsp;</p>
+            </div>
+
+            <div class="statsContainer container_child rounded_small">
+               <p id="label1" class="statLabel">Claimable Chocos</p>
+               <p id="freezer_awaiting_claim" class="statValue">&nbsp;</p>
+            </div> 
+
+         </div>
+   </div>
+
+   <div class="action-container rounded_small">
+
+         <div>
+            <button class="button-29" onclick="approve_chocolatier_on_camelot();">approve</button>
+            <button class="button-29" onclick="chocolatier_deposit_fridge();">deposit</button>
+               <input class="input_box rounded_small" id="deposit_fridge_input" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">deposit ChocoLP</input>
+         </div>
+         <div>
+               <button class="button-29" onclick="chocolatier_withdraw_fridge();">withrdaw</button>
+               <button class="button-29" onclick="chocolatier_claim_fridge();">claim</button>
+               <input class="input_box rounded_small" id="withdraw_fridge_input" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">Withdraw ChocoLP</input>
+         </div>
+   </div> 
+
+</div>
+
+
+
+
+
+
+
+
+
+<div><br><br><br></div>
+
+
+<p style="text-align: center;">Chocolatier Freezer</p>
+
+
+
+<div id="claimContainer" class="section container small_gap rounded_small rounded_small">
+
+   <div class="container container_child">
+         <div class="colflex container_child container small_gap">
+            <div class="statsContainer container_child rounded_small">
+               <p class="statLabel">Chilled Chocos</p>
+               <p id="chilled_chocos" class="statValue">&nbsp;</p>
+            </div>
+
+            <div class="statsContainer container_child rounded_small">
+               <p id="label1" class="statLabel">TVL</p>
+               <p id="fridge_TVL" class="statValue">&nbsp;</p>
+            </div> 
+         </div>
+         
+
+
+         <div id="presaleStats" class="colflex container_child container small_gap">
+
+            <div class="statsContainer container_child rounded_small">
+               <p class="statLabel">Fridge APR</p>
+               <p class="statValue">&nbsp;</p>
+            </div>
+
+            <div class="statsContainer container_child rounded_small">
+               <p id="label1" class="statLabel">Claimable Chocos</p>
+               <p id="label2" class="statValue">&nbsp;</p>
+            </div> 
+         </div>
+   </div>
+
+   <div class="action-container">
+
+         <div>
+               <button class="button-29" onclick="approve_chocolatier_on_choco();">approve</button>
+               <button class="button-29" onclick="chocolatier_deposit_freezer();">deposit</button>
+               <input class="input_box rounded_small" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">deposit Choco</input>
+         </div>
+         <div>
+               <button class="button-29" onclick="approve('www');">withrdaw</button>
+               <button class="button-29" onclick="chocolatier_claim_freezer();">claim</button>
+               <input class="input_box rounded_small" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">Withdraw Choco</input>
+         </div>
+   </div> 
+
+</div>
+
+<br>
 
 
    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
@@ -108,44 +233,23 @@
    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script> 
    <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' 
            data-cf-beacon='{"token": "b639d3bcad3c4ec397fce4e2e2d6aebf"}'></script> -->
-   <script type="text/javascript" src="./mainCanvas.js"></script> 
+   <!-- <script type="text/javascript" src="./mainCanvas.js"></script>  -->
    <script type="text/javascript" src="./mainScript.js"></script> 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.0.8/ethers.js" integrity="sha512-6n4OHOXc5lLrX5bRgWsvvkNib1eUqWwynvG1xq7FubofIW0cKfipw/Z/YAnndRAWw1OQqReLHE6CmaPkLujTIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script>
       document.body.tabIndex = '0';
       document.body.focus();
    </script>
-   <script>
-      // epoch will be posted, cocoa beans are cured to be processed into choco as we speak
-     var epoch = 1677970800000
-     var countDownDate = new Date(epoch);
-   
-     var x = setInterval(function() {
-      if (epoch) {
-       var now = new Date().getTime();
-       var distance = countDownDate - now;
-       var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0'); 
-       var seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-       document.getElementById("ChocoShow").innerHTML = "liquidity added in:" + "<br/>&nbsp&nbsp--" + days + "-" + hours + "-"
-       + minutes + "-" + seconds + "--&nbsp";
-      }
-       if (distance < 0) {
-         clearInterval(x);
-         document.getElementById("ChocoShow").innerHTML = "Sale Ended!<br>Go meet the Chocolatier";
-       }
-     }, 1000);
-     </script>
    <script type="text/javascript" src="https://unpkg.com/@metamask/detect-provider@2.0.0/dist/index.js"></script> 
-    <script>
+    <!-- <script>
       if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
-</script>
+</script> -->
    <script>      
       window.onload = (event) => {
-         init();
+         console.log("onload");
+         // init();
          isConnected();
          registerEventsListeners();
       };
