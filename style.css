@@ -231,7 +231,7 @@ body {
   /* align-self: center; */
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  min-width: 120px;
+  min-width: 80px;
 }
 
 #amount {
