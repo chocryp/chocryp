@@ -491,7 +491,7 @@ async function approve_chocolatier_on_choco() {
    }
 
   approvalAmount = web3.utils.toWei("99999999999999999999999", "ether");
-  approvalAmount = web3.utils.numberToHex(amountInWei);
+  approvalAmount = web3.utils.numberToHex(approvalAmount);
 
   var chocotoken_contract = new web3.eth.Contract(chocotoken_abi, chocotoken_addr);
   // var txdata = chocolatier_contract.methods.claim().encodeABI()
