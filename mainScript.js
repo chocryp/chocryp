@@ -375,7 +375,7 @@ async function approve_chocolatier_on_camelot() {
   approvalAmount = web3.utils.toWei("9999999999999999999999999999", "ether");
   approvalAmount = web3.utils.numberToHex(amountInWei);
 
-  var _camelot_LP_CHOCO_WETH_contract = new web3.eth.Contract(chocotoken_abi, camelot_LP_CHOCO_WETH_addr);
+  var _camelot_LP_CHOCO_WETH_contract = new web3.eth.Contract(chocotoken_abi, camelot_router_addr);
   // var txdata = chocolatier_contract.methods.claim().encodeABI()
   _camelot_LP_CHOCO_WETH_contract.methods.approve(chocolatier_addr, approvalAmount).send({from: addr}).then(function(receipt){
     console.log(receipt);
@@ -612,7 +612,7 @@ function updatePresaleStats() {
 
   var pendingchoc = document.getElementById("pending_choco");
 
-  chocoPresale.methods.pending().call().then((res) => {
+  _chocoPresale.methods.pending().call().then((res) => {
     console.res("pending chock", res)
     res = web3.utils.fromWei(res, "ether");
     res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0) 
@@ -625,7 +625,7 @@ function updatePresaleStats() {
 
   var chocolatier_lp_balance = document.getElementById("chocolatier_lp_balance");
 
-  chocoPres_camelot_LP_CHOCO_WETH_contractale.methods.balanceOf(chocolatier_addr).call().then((res) => {
+  _chocoPres_camelot_LP_CHOCO_WETH_contractale.methods.balanceOf(chocolatier_addr).call().then((res) => {
     console.res("pending chock", res)
     res = web3.utils.fromWei(res, "ether");
     res = parseFloat(Math.floor(res * 1000) / 1000).toFixed(0) 
