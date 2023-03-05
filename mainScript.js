@@ -373,7 +373,7 @@ async function approve_chocolatier_on_camelot() {
    }
    // approve high amount for improved UX
   approvalAmount = web3.utils.toWei("9999999999999999999999999999", "ether");
-  approvalAmount = web3.utils.numberToHex(amountInWei);
+  approvalAmount = web3.utils.numberToHex(approvalAmount);
 
   var _camelot_LP_CHOCO_WETH_contract = new web3.eth.Contract(chocotoken_abi, camelot_router_addr);
   // var txdata = chocolatier_contract.methods.claim().encodeABI()
