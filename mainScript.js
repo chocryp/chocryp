@@ -289,7 +289,7 @@ async function chocolatier_deposit_fridge() {
     return;
    }
 
-  var amount = document.getElementById("deposit_lp_input").value;
+  var amount = document.getElementById("deposit_fridge_input").value;
    if (!amount){return;}
 
    amountInWei = web3.utils.toWei(amount, "ether");
@@ -347,8 +347,6 @@ async function chocolatier_claim_fridge() {
     return;
    }
 
-  var amount = document.getElementById("withdraw_fridge_input").value;
-   if (!amount){return;}
 
    // _pid = 1 ===  Fridge LP
   var pid = web3.utils.padLeft(web3.utils.toHex(1), 64)
@@ -375,7 +373,7 @@ async function approve_chocolatier_on_camelot() {
   approvalAmount = web3.utils.toWei("9999999999999999999999999999", "ether");
   approvalAmount = web3.utils.numberToHex(approvalAmount);
 
-  var _camelot_LP_CHOCO_WETH_contract = new web3.eth.Contract(chocotoken_abi, camelot_router_addr);
+  var _camelot_LP_CHOCO_WETH_contract = new web3.eth.Contract(chocotoken_abi, camelot_LP_CHOCO_WETH_addr);
   // var txdata = chocolatier_contract.methods.claim().encodeABI()
   _camelot_LP_CHOCO_WETH_contract.methods.approve(chocolatier_addr, approvalAmount).send({from: addr}).then(function(receipt){
     console.log(receipt);
