@@ -200,12 +200,12 @@
          <div>
                <button class="button-29" onclick="approve_chocolatier_on_choco();">approve</button>
                <button class="button-29" onclick="chocolatier_deposit_freezer();">deposit</button>
-               <input class="input_box rounded_small" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">deposit Choco</input>
+               <input id="deposit_freezer_input" class="input_box rounded_small" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">deposit Choco</input>
          </div>
          <div>
                <button class="button-29" onclick="approve('www');">withdraw</button>
                <button class="button-29" onclick="chocolatier_claim_freezer();">claim</button>
-               <input class="input_box rounded_small" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">Withdraw Choco</input>
+               <input id="withdraw_freezer_input" class="input_box rounded_small" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">Withdraw Choco</input>
          </div>
    </div> 
 </div>
