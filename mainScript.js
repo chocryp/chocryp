@@ -408,7 +408,7 @@ async function chocolatier_deposit_freezer() {
     return;
    }
 
-  var amount = document.getElementById("deposit_lp_input").value;
+  var amount = document.getElementById("deposit_freezer_input").value;
    if (!amount){return;}
 
    amountInWei = web3.utils.toWei(amount, "ether");
@@ -436,7 +436,7 @@ async function chocolatier_withdraw_freezer() {
     return;
    }
 
-  var amount = document.getElementById("deposit_lp_input").value;
+  var amount = document.getElementById("withdraw_freezer_input").value;
    if (!amount){return;}
 
    amountInWei = web3.utils.toWei(amount, "ether");
@@ -446,7 +446,7 @@ async function chocolatier_withdraw_freezer() {
  
   var chocolatier_contract = new web3.eth.Contract(chocolatier_abi, chocolatier_addr);
   // var txdata = chocolatier_contract.methods.claim().encodeABI()
-  chocolatier_contract.methods.deposit(pid, amountInWei).send({from: addr}).then(function(receipt){
+  chocolatier_contract.methods.withdraw(pid, amountInWei).send({from: addr}).then(function(receipt){
     console.log(receipt);
 });
 }
